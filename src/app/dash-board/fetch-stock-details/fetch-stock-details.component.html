@@ -1,0 +1,48 @@
+<div class="customDate_Dev">
+
+    <p>Current Date :  {{ currentDate | customDate: 'def' }}</p>
+
+    <div>
+
+        <div class="div-content">
+            <app-app-calendar  (dateFromChild) = "fetchStockDetails($event)"></app-app-calendar>
+          </div>
+
+    </div>
+
+
+    <div *ngIf="stockNotFoundFlag">
+        <p class="display-error">{{stockNotAvailable}}</p>
+       <div class="stock_upload_button"> <p>Upload Stock Details : </p> <button class="button" (click)="UploadStock()">Upload</button>
+       </div>
+    </div>
+    
+    <div class="fetch-table-container" *ngIf="displayTableRecordFlag">
+        <p>{{this.stockFoundMessage}}</p>
+        <table class="responsive-table-fetch">
+            <thead>
+                <tr>
+                    <td>Stock Id</td>
+                    <td>Market Open</td>
+                    <td>Market Index Closed</td>
+                    <td>Market Index Gap</td>
+                  <td>Market Close</td>
+                  <td>Market Gap </td>
+                  <td>Index Sign</td>
+                  <td>Market Sign</td>
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{stockDetailsRespVo.stockId}}</td>
+                    <td>{{stockDetailsRespVo.marketStartValue}}</td>
+                    <td>{{stockDetailsRespVo.aftIndxValue}}</td>
+                    <td>{{stockDetailsRespVo.indxgapResult}}</td>
+                  <td>{{stockDetailsRespVo.marketDayEndValue}}</td>
+                  <td>{{stockDetailsRespVo.marketgapResult}}</td>
+                  <td>{{stockDetailsRespVo.indxSignStatus}}</td>
+                  <td>{{stockDetailsRespVo.marketSingStatus}}</td>
+            </tbody>
+        </table>
+    </div>
+
+</div>

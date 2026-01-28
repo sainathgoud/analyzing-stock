@@ -1,0 +1,93 @@
+<div class="table-container">
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Index No</th>
+          <th>Staring Index</th>
+          <th>Index Sign</th>
+          <th>Index Count</th>
+          <th>Index time</th>
+                  </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Index-1 </td>
+          <td>{{ chartDataSetObj.indexone.indStartValue }}</td>
+          <td>{{ chartDataSetObj.indexone.indSign }} </td>
+          <td>{{ chartDataSetObj.indexone.indxCount }} </td>
+          <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexone.indxSecondsTime"></td>
+        </tr>
+        <tr>
+            <td>Index-2</td>
+            <td>{{ chartDataSetObj.indextwo.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indextwo.indSign }} </td>
+            <td>{{ chartDataSetObj.indextwo.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indextwo.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-3 </td>
+            <td>{{ chartDataSetObj.indexthree.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexthree.indSign }} </td>
+            <td>{{ chartDataSetObj.indexthree.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexthree.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-4 </td>
+            <td>{{ chartDataSetObj.indexfour.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexfour.indSign }} </td>
+            <td>{{ chartDataSetObj.indexfour.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexfour.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-5 </td>
+            <td>{{ chartDataSetObj.indexfive.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexfive.indSign }} </td>
+            <td>{{ chartDataSetObj.indexfive.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexfive.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-6 </td>
+            <td>{{ chartDataSetObj.indexsix.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexsix.indSign }} </td>
+            <td>{{ chartDataSetObj.indexsix.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexsix.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-7 </td>
+            <td>{{ chartDataSetObj.indexseveen.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexseveen.indSign }} </td>
+            <td>{{ chartDataSetObj.indexseveen.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexseveen.indxSecondsTime"></td>
+          </tr>
+          <tr>
+            <td>Index-8 </td>
+            <td>{{ chartDataSetObj.indexeight.indStartValue }}</td>
+            <td>{{ chartDataSetObj.indexeight.indSign }} </td>
+            <td>{{ chartDataSetObj.indexeight.indxCount }} </td>
+            <td> <input type="text"  value="value" [(ngModel)]= "chartDataSetObj.indexeight.indxSecondsTime"></td>
+          </tr>
+      </tbody>
+    </table>
+
+    <div>
+        <div class="table-container">
+            <table class="responsive-table">
+              <thead>
+                <tr>
+                  <th>Day Staring Index</th>
+                  <th>Day End Index</th>
+                  <th>Index Resulr</th>
+                  <th>Index Sign</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ chartDataSetObj.marketValue }}</td>
+                  <td>{{ chartDataSetObj.aftIndex }} </td>
+                  <td>{{ chartDataSetObj.indexGapResult }} </td>
+                  <td>{{ chartDataSetObj.dayindSign }} </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+  </div>

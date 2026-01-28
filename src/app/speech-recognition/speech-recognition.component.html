@@ -1,0 +1,26 @@
+<p>speech-recognition works!</p>
+<div style="margin: 100px;">
+    <h1>Voice recognition</h1>
+    <button style="margin: 10px;" (click)="startService()" [disabled]="startEnable">Start</button>
+    <button style="margin: 10px;" (click)="stopService()" [disabled]="stopEnable">Stop</button>
+    <button style="margin: 10px;" (click)="clearText()">clearText</button>
+    <select [(ngModel)]="convertFormatType" (change)="vedioOnlyStreamCheck($event.target)"> <option *ngFor="let formatvalue of textformatType" [value]="formatvalue">
+    {{ formatvalue }}
+  </option>
+</select>
+    <div  *ngIf="isTextFormatTypeCheck">
+      <button style="margin: 10px;" (click)="formatText()">FormatText</button>
+    </div>
+     <div *ngIf="isVedioOnlyStreamCheck">
+      <button style="margin: 10px;" (click)="vedioStramFormat()">VedioText</button>
+    </div>
+    
+    <!-- <p>{{service.text}}</p> -->
+    <div>
+        <textarea rows="15" cols="120" [(ngModel)] = "service.text"></textarea>
+    </div>
+
+    <div *ngIf="isFormatTextCheck">
+        <textarea rows="15" cols="120" [(ngModel)] = "formatTextVal"></textarea>
+    </div>
+</div>

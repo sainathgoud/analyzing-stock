@@ -1,0 +1,48 @@
+
+.indChartMain{
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.indchartContainergrid {
+    display: flex;
+    width: 100%;
+   // height: 30px; /* Take full viewport height */
+  
+    /* Flexbox properties to divide the container */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    //margin: 5px;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .left-side, .right-side {
+    //flex: 1; /* Each side takes equal width */
+    //padding: 20px;
+    box-sizing: border-box;
+    //height: 17vh; /* Ensure both sections take the full height */
+  
+    /* Optional: Styling for visual separation */
+    background-color: lightgray;
+    border: 1px solid #ccc;
+    margin: 2px;
+    //display: block;
+    width: 49%;
+    font-size: 1rem;
+    text-align: center;
+    p{
+      padding: 0px;
+      margin: 0px;
+      font-weight: bold;
+      color: black;
+      font-size: 1rem;
+  }
+  
+ 
+  }
+  
+  .savingChart{
+    align-items: center;
+    background-color: blue;
+  }

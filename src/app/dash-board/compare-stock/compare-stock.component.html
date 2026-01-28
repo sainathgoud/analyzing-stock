@@ -1,0 +1,191 @@
+<p class="p_head"> Compare Stocks</p>
+<div class="customDate_Dev">
+
+    <p>Current Date :  {{ currentDate | customDate: 'def' }}</p>
+
+</div>
+ <select [(ngModel)]="selectTypeFetch"  (change)="findTypeFetch()" >
+       <option *ngFor="let fetchOpn of stockDetailsFetchTypeArry" [value]="fetchOpn" > {{ fetchOpn }}</option>  
+    </select>
+<div>
+
+    <div class="div-content" *ngIf="get_StockDetails_on_Dates_dev">
+            <label class="lable_text">Get Stock Details on Dates :</label>
+            <app-app-calendar  (dateFromChild) = "fetchStockDetails($event)"></app-app-calendar>
+          </div>
+
+          <div *ngIf="get_By_Criteria_dev">
+          <p>sadsd</p>
+
+          </div>
+    
+
+
+  
+    
+    <div class="fetch-table-container" *ngIf="displayTableRecordFlag">
+        <p>{{this.stockFoundMessage}}</p>
+        <table class="responsive-table-fetch">
+            <thead>
+                <tr>
+                    <td>Stock Id</td>
+                    <td>Market Open</td>
+                    <td>Market Index Closed</td>
+                    <td>Market Index Gap</td>
+                  <td>Market Close</td>
+                  <td>Market Gap </td>
+                  <td>Index Sign</td>
+                  <td>Market Sign</td>
+                  <td>First Index Value</td>
+                  <td>First Index Sign</td>
+                   <td>Submit Status</td>
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{stockDetailsRespVo.stockId}}</td>
+                    <td>{{stockDetailsRespVo.marketStartValue}}</td>
+                    <td>{{stockDetailsRespVo.aftIndxValue}}</td>
+                    <td>{{stockDetailsRespVo.indxgapResult}}
+                            <select [(ngModel)]="selectedIndexGapType"  (change)="enableIndexGapDev()" >
+                                      <option *ngFor="let indxgapValueOpn of dropdownSing" [value]="indxgapValueOpn" > {{ indxgapValueOpn }}</option>
+                                      </select>
+                    <input type="text" [(ngModel)]="indexGapValue"  *ngIf="isIndexGapEnabledFlag" (change)="checkIndexGapValue()">
+
+
+                    </td>
+                  <td>{{stockDetailsRespVo.marketDayEndValue}}</td>
+                  <td>{{stockDetailsRespVo.marketgapResult}}</td>
+                  <td>{{stockDetailsRespVo.indxSignStatus}} <input type="checkbox" [(ngModel)] = "isCheckedMastIndSign"></td>
+                  <td>{{stockDetailsRespVo.marketSingStatus}}</td>
+                   <td>{{stockDetailsRespVo.indxFirstValue}} <select [(ngModel)]="firstIndAdjustmentSing"  (change)="checkFirstIndVal()" >
+    <option *ngFor="let valueSign of dropdownSing" [value]="valueSign" >
+    {{ valueSign }}
+  </option>
+</select>
+<input type="text" [(ngModel)]="firstIndDiffval"  *ngIf="isFirstIndDiffvalFlag" (change)="checkInputDiffVal()">
+
+</td>
+                  <td>{{stockDetailsRespVo.firstIndSing}} <input type="checkbox" [(ngModel)] = "isCheckedFirstIndSign"></td>
+                  <td><button (click)="ValidatingAllFlags()" [disabled] = "isSubmitValidationFlag">Submit</button></td>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <p *ngIf="submitValidationDev" style="color:red">{{submitValidationMessage}}</p>
+    </div>
+
+
+
+
+    <div class="fetch-table-container"  *ngIf="fetch_table_container_dev">
+
+          <table  class="responsive-table-fetch">
+            <thead>
+                <tr>
+                    <td>S.no</td>
+                    <td>Stock Id</td>
+                    <td>Market Open</td>
+                    <td>Market Index Closed</td>
+                    <td>Market Index Gap</td>
+                  <td>Market Close</td>
+                  <td>Market Gap </td>
+                  <td>Index Sign</td>
+                  <td>Market Sign</td>
+                  <td>First Index Value</td>
+                  <td>First Index Sign</td>
+                 
+                </tr>
+            </thead>
+            <tbody *ngFor="let compVal of displayingStockDetails; let i = index">
+                
+                <tr >
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{compVal.stockId}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.marketStartValue}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.aftIndxValue}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.indxgapResult}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.marketDayEndValue}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.marketgapResult}}
+                    </td>
+
+                     <td>
+                        {{compVal.stockDetailsResponseVo.indxSignStatus}}
+                    </td>
+
+                     <td>
+                        {{compVal.stockDetailsResponseVo.marketSingStatus}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.indxFirstValue}}
+                    </td>
+                     <td>
+                        {{compVal.stockDetailsResponseVo.firstIndSing}}
+                    </td>
+                    
+                </tr>
+                <tr *ngIf="compVal.chartDetailsResponseVo[0] != null"  style="margin-bottom:10px;">
+                    
+                         <td >
+                         {{compVal.chartDetailsResponseVo[0].chartName}}
+                        </td>
+                         <td >
+                         {{compVal.chartDetailsResponseVo[0].chartType}}
+                        </td>
+                         <td colspan="2">
+                         {{compVal.chartDetailsResponseVo[0].chartNotes}}
+                        </td>
+
+                         <td >
+                         <button (click)="openPopup(compVal.chartDetailsResponseVo[0])">view</button>
+                        </td>
+                
+                   
+                         <td >
+                         {{compVal.chartDetailsResponseVo[1].chartName}}
+                        </td>
+                         <td >
+                         {{compVal.chartDetailsResponseVo[1].chartType}}
+                        </td>
+                         <td colspan="2">
+                         {{compVal.chartDetailsResponseVo[1].chartNotes}}
+                        </td>
+
+                         <td >
+                         <button (click)="openPopup(compVal.chartDetailsResponseVo[1])">view</button>
+                        </td>
+                </tr>
+      </tbody>
+      </table>
+    </div>
+ 
+    <div *ngIf="displayingStockDetails.length == 0">
+        <p class="display-result-message">No Stock Details to Display. Please Fetch Stock Details.</p>
+    </div>
+    
+    <div class="pagination-controls" *ngIf="displayingStockDetails.length > 0">
+        <button (click)="previous()" [disabled]="pageNumber  === 1">Previous</button>
+        <span>Page {{ pageNumber }} of {{ totalRecords }}</span>
+        <button (click)="next()" [disabled]="pageNumber * pageSize >= totalRecords">Next</button>      
+        
+
+
+    <div class="popup-overlay" *ngIf="isPopupOpen">
+  <div class="popup">
+    <button class="close-btn" (click)="closePopup()">×</button>
+    <img src={{show_image_url}} />
+  </div>
+</div>
+</div>

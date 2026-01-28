@@ -1,0 +1,37 @@
+<div class="main_dev" >
+
+    <div class="global_main_title">
+      Welcome To Analyzing Stock
+    </div>
+    <div class="global_main_subtitle">
+      <p>
+        Login
+      </p>
+    </div >
+  
+  
+    <div class="logic_box">
+      <div class="input_tag"><label>User Name : </label>
+        <input type="text" value="userName"  size="30px" height="60px"  [(ngModel)] = "login.userName">
+      </div>
+      <div class="input_tag">
+        <label>Password : </label>
+        <input type="text" value="password"  size="30px" [(ngModel)] = "login.password"></div>
+      <div>
+       <button (click)="logincheck()">Submit</button>
+      </div>
+      <div class="errorMsg" *ngIf = "loginerror">
+        <label>{{errorMessage}}</label>
+      </div>
+     </div>
+  
+
+  </div>
+
+  <div>
+    <img src="/myfile/27012025_line_chart.png" width="500" height="600">
+
+  </div>
+  <div>
+    <img src="/myfile/27012025/27012025_line_chart.png" width="500" height="600">
+  </div>

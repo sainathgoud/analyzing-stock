@@ -1,0 +1,7 @@
+<!-- Show the alert message if there is a message -->
+<div *ngIf="alertMessage" class="alert" [ngClass]="alertType">
+    <div class="alertMessageDisplay"><span>{{ alertMessage }}</span></div>
+    <div class="alertButton">
+    <button (click)="closeAlert()">Close</button>
+  </div>
+  </div>

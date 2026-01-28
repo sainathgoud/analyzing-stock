@@ -1,0 +1,67 @@
+.table-container {
+    margin: 8px;
+    overflow-x: auto;
+  }
+  
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  .responsive-table th,
+  .responsive-table td {
+    padding: 5px 12px;
+    text-align: left;
+  }
+  
+  .responsive-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Add zebra striping for rows */
+  .responsive-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Make the table scrollable on small screens */
+  @media (max-width: 600px) {
+    .responsive-table,
+    .responsive-table thead,
+    .responsive-table tbody,
+    .responsive-table th,
+    .responsive-table td,
+    .responsive-table tr {
+      display: block;
+    }
+  
+    .responsive-table thead {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .responsive-table tr {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+  
+    .responsive-table td {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .responsive-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+    }
+  
+    .responsive-table td:first-child {
+      padding-left: 10px;
+    }
+  }

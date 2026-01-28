@@ -1,0 +1,15 @@
+<div class="calendar-container">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="selectedDate"  (dateChange)="onDateChange()" >
+      <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker #picker ></mat-datepicker>
+    </mat-form-field>
+  
+   <!-- <div class="display-date">    <p *ngIf="selectedDate">
+      You selected: {{ selectedDate | customDate: 'def' }}
+    </p>
+</div>-->
+
+  </div>
+
+ 

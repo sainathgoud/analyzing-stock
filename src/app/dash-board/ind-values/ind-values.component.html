@@ -1,0 +1,70 @@
+<div class="indexvalMainContainer">
+    <p class ="title">Index Values Details</p>
+     <p class="inddate">Date : {{todayDate  | customDate: "def"}}</p>
+     <div class = "editbutton"><button (click)="restoreData()">Restore</button></div>
+  <div class ="indecvalTitel">
+  
+    <div class="part"><label>Market Value : </label><input type="text" name="marketValue" [(ngModel)] ="marketValue" (change)="checkingdayIndex()"></div>
+    <div class="part"><label>Ater Index : </label> <input type="text" name="aftIndex" [(ngModel)] ="aftIndex" (change)="checkingdayIndex()"></div>
+    <div class="part"><label>Index Gap Result : </label><input type="text" name="indexGapResult" value="{{indexGapResult}}"></div>
+      
+  </div>
+  <div class="indexvalContainergrid"> 
+    <div class="left-side">
+      <p>Index : 1</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValueone" (change)="checkingIndexValue('1')"></textarea>
+  
+    </div>
+    <div class="right-side">
+      <p>Index : 2</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValuetwo" (change)="checkingIndexValue('2')"></textarea>
+  
+    </div>
+  </div>
+  
+  <div class="indexvalContainergrid"> 
+    <div class="left-side">
+      <p>Index : 3</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValuethree" (change)="checkingIndexValue('3')"></textarea>
+  
+    </div>
+    <div class="right-side">
+      <p>Index : 4</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValuefour" (change)="checkingIndexValue('4')"></textarea>
+  
+    </div>
+  </div>
+  
+  <div class="indexvalContainergrid"> 
+    <div class="left-side">
+      <p>Index : 5</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValuefive" (change)="checkingIndexValue('5')"></textarea>
+  
+    </div>
+    <div class="right-side">
+      <p>Index : 6</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValuesix" (change)="checkingIndexValue('6')"></textarea>
+  
+    </div>
+  </div>
+  
+  <div class="indexvalContainergrid"> 
+    <div class="left-side">
+      <p>Index : 7</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValueseveen" (change)="checkingIndexValue('7')"></textarea>
+  
+    </div>
+
+    <div class="right-side">
+      <p>Index : 8</p>
+      <textarea name="indValue" rows="4" cols="90" [(ngModel)] = "indValueeight" (change)="checkingIndexValue('8')"></textarea>
+
+    </div>
+  </div>
+  </div> <!--indexvalMainContainer-->
+  <div class="sbumitButton">
+    <button (click)="submit()" [disabled]="!submitresultCheck"  
+    [ngStyle]="{ 'background-color': submitresultCheck? '#3498db' : '#bdc3c7',
+     'color': submitresultCheck ? 'white' : '#7f8c8d' }">
+    Submit </button>
+  </div>

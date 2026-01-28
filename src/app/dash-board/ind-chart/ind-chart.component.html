@@ -1,0 +1,84 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<app-alert></app-alert>
+
+<div class="indChartMain">
+
+    <div class="indchartContainergrid"> 
+        <div class="left-side">
+          <p>Index : 1</p>
+          <div [chart]="linechartvalone"></div>
+
+        </div>
+        <div class="right-side">
+          <p>Index : 2</p>
+          <div [chart]="linechartvaltwo"></div>
+
+        </div>
+      </div>
+      
+    <div class="indchartContainergrid"> 
+        <div class="left-side">
+          <p>Index : 3</p>
+          <div [chart]="linechartvalthree"></div>
+
+        </div>
+        <div class="right-side">
+          <p>Index : 4</p>
+          <div [chart]="linechartvalfour"></div>
+
+        </div>
+      </div>
+      
+    <div class="indchartContainergrid"> 
+        <div class="left-side">
+          <p>Index : 5</p>
+          <div [chart]="linechartvalfive"></div>
+
+        </div>
+        <div class="right-side">
+          <p>Index : 6</p>
+          <div [chart]="linechartvalsix"></div>
+
+        </div>
+      </div>
+      
+    <div class="indchartContainergrid"> 
+        <div class="left-side">
+          <p>Index : 7</p>
+          <div [chart]="linechartvalseveen"></div>
+
+        </div>
+        <div class="right-side">
+          <p>Index : 8</p>
+          <div [chart]="linechartvaleight"></div>
+        </div>
+      </div>
+
+
+      <div class="indchartContainergrid"> 
+        <div class="left-side">
+          <p>Index : 7</p>
+          <app-display-table-chart [chartDataSetObj]="pass_child_chartDataSet"></app-display-table-chart>
+          <!-- <app-display-table-chart></app-display-table-chart> -->
+
+        </div>
+        <div class="right-side">
+          <p>Notes</p>
+          <textarea name="indexNotes" rows="22" cols="75" [(ngModel)] = "indexNotes" ></textarea>
+
+        </div>
+      </div>
+
+
+      <div>
+        <button (click)="displayfullChart()"> {{textshowfullchart}}</button>
+        <div *ngIf="showfullchart">
+          <div [chart]="displayfullchart"></div>
+
+        </div>
+      </div>
+      <div class="savingChart">
+        <button (click)="saveChartDetails()" [disabled]="isLoading"> Submit Chart Details</button>
+
+      </div>
+</div>

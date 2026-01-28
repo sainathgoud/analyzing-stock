@@ -1,0 +1,67 @@
+.spaced-table {
+  border-collapse: separate;
+  border-spacing: 0 12px; /* 12px between rows */
+}
+
+
+/* Popup overlay background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Image styling */
+.popup img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.lable_text {
+    font-weight: 100;
+    margin-right: 10px;
+    font-size: medium;
+}
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.display-result-message {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}

@@ -1,0 +1,22 @@
+
+
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$default-color: #f77f3f;
+
+$btn-background: #d04a02;
+$btn-border: #185abd;
+$text-color-white: #ffffff;
+.main_app{
+    background-color: $secondary-color;
+    height: auto;
+    width: auto;
+    margin :0px;
+    padding: 0px;
+    margin-inline-start: 0px;
+}
+
+.customDate_Dev {
+    font-size: large;
+}

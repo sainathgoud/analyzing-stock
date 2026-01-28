@@ -1,0 +1,92 @@
+/* styles.css */
+.calendar-container {
+    margin: 10px;
+    display: flex;
+   // flex-direction: column;
+    z-index: 9999;  /* Ensure the loader is above other content */
+    
+    
+  }
+
+  
+
+  mat-form-field {
+    margin-bottom: 5px;
+  }
+
+  ::ng-deep .mat-mdc-form-field-flex {
+    font-size: large;
+    padding: 0px;
+    margin: 0px;
+    height: 20px;
+}
+
+::ng-deep .mat-mdc-form-field-input-control{
+    font-size: large;
+    font: icon;
+}
+
+  ::ng-deep .cdk-overlay-container{
+    width: 250px;
+
+  }
+
+  
+  /* app.component.scss or calendar.component.scss */
+::ng-deep .mat-datepicker-content-container {
+    background-color: #f1f1f1; /* Set background color */
+    border-radius: 8px; /* Round the corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    padding: 10px; /* Add some padding inside the content container */
+    //width: 250px;
+    width: 300px; /* Set the width */
+    max-width: 90vw; /* Make sure it doesn't exceed the viewport */
+    //position: inherit;
+    //display: initial;
+  }
+  
+  /* Optionally, target the calendar itself */
+  ::ng-deep .mat-calendar {
+    font-family: Arial, sans-serif; /* Change the font family */
+    color: #333; /* Set text color */
+  }
+  
+  ::ng-deep .mat-calendar-header {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+  }
+  
+  ::ng-deep .mat-calendar-body {
+    background-color: #ffffff; /* Calendar body background color */
+    width: 105%;
+    height: 100px;
+    display: inherit;
+    position: inherit;
+  }
+  
+  /* Style the calendar date cells */
+  ::ng-deep .mat-calendar-body-cell {
+    border-radius: 5px; /* Round the date cell corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  ::ng-deep .mat-calendar-body-cell:hover {
+    background-color: #007bff; /* Hover color */
+    color: white; /* Change text color on hover */
+  }
+  
+  ::ng-deep .mat-calendar-body-cell.selected {
+    background-color: #007bff !important; /* Highlight the selected date */
+    color: white !important;
+  }
+
+  .display-date, .p{
+    text-align: center;
+    font-size: large;
+    font-weight: 100;
+    height: 30px;
+    width: 200px;
+    max-width: 220px;
+    padding: 0px;
+    margin: 0px;
+  }

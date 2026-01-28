@@ -1,0 +1,55 @@
+//  @import 'styles/_variablesone.scss'; 
+
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$default-color: #f77f3f;
+
+$btn-background: #d04a02;
+$btn-border: #185abd;
+$text-color-white: #ffffff;
+
+.main_dev {
+    text-align: center;
+    width: 100%;
+    min-height: 710px;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    background-color: $secondary-color;
+   
+   // position: sticky;
+   
+
+
+
+ .logic_box{
+    width: 100%;
+    
+    color: white;
+   height: 200px;
+   //border: #02d0a0;
+   margin-top: 10px;
+   font-size: x-large;
+   
+   
+
+ }
+ .input_tag{
+  
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    inline-size: none;
+
+    input{
+      height: 30px;
+    }
+
+ }
+ .errorMsg{
+    color: red;
+    font-size: larger;
+ }
+
+}

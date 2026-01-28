@@ -1,0 +1,151 @@
+<div class="head_div">
+    <h1>Uplaod Chart Screen</h1>
+</div>
+
+<app-alert></app-alert>
+
+<div class="container">
+    <div class="div">
+      <div class="div-content">
+        <app-app-calendar  (dateFromChild) = "handleDataFromChild($event)"></app-app-calendar>
+      </div>
+    </div>
+    <div class="div">
+      <div class="div-content">
+        <div  class="displayDate-dev">
+
+            <p class="displayDate" *ngIf="receiveDateFromChild">
+                    You selected Date: {{ receiveDateFromChild | customDate: 'def' }}
+            </p>
+              <p class="errorMesg" *ngIf="isShowError">
+                {{errorMessage}}
+              </p>
+            </div>   
+    </div>
+    </div>
+    <div class="div">
+      <div class="div-content">
+        <div class="table_div">
+            <table class="table_details">
+                <thead>
+                 
+                     <tr>
+                        <td>S.No</td>
+                        <td>Chart Type</td>
+                        <td>
+                            Upload Status
+                        </td>
+                    </tr>
+                    
+                </thead>
+              
+                <tr *ngFor="let chartDisp of chartUploadStatusDisplay; let i = index">
+                  <td>{{ i + 1 }}</td> <!-- Index starts from 0, so adding 1 -->
+                  <td>{{ chartDisp.chartType }}</td>
+                  <td *ngIf="chartDisp.status === 'Not Uploaded'">{{ chartDisp.status }}</td>
+                  <td *ngIf="chartDisp.status === 'Uploaded'">
+
+                    <button  (click)="viewChart(chartDisp.chartType, chartDisp.imageUrl)">view</button>
+                  </td>
+                </tr>
+                
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div *ngIf="uploadChartDiv">  <!--straring  :::: this dev will show when upload data not found in back end-->  
+<div class="dropdown_dev">
+<p>Select Type of Chart to Upload</p>
+<div>
+    <label for="selectDropdown">Select an Chart:</label>
+    <select class="selectDropdown" [(ngModel)]="selectedChartType">
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+ 
+    </div>
+
+
+    <div class="upload_dev" *ngIf="selectedChartType">
+    <div class="upload_file">
+        <h1> You selected Upload File : {{ selectedChartType  }}</h1>
+        <input type="file" (change)="onFileSelect($event)" />
+        <!-- <button (click)="upload()">Upload</button> -->
+        
+        <p *ngIf="uploadResponse">{{ uploadResponse }}</p>
+
+    </div>
+    <div class="upload_notes">
+        <textarea name="indValue" rows="6" cols="90" [(ngModel)] = "chartNotes" ></textarea>
+
+    </div>
+
+    <div class="upload_button">
+        <button (click)="upload()">Upload</button>
+    </div>
+</div>
+</div><!--closing  :::: this dev will show when upload data not found in back end-->  
+
+
+<div *ngIf="marketDayValueDiv">
+  <div class="fetch-table-container">
+    <p>{{this.stockFoundMessage}}</p>
+    <table class="responsive-table-fetch">
+        <thead>
+            <tr>
+                <td>Stock Id</td>
+                <td>Market Open</td>
+                <td>Market Index Closed</td>
+                <td>Market Index Gap</td>
+              <td>Market Close</td>
+              <td>Market Gap </td>
+              <td>Index Sign</td>
+              <td>Market Sign</td>
+            </tr>
+        </thead>
+        <tbody>
+            <td>{{stockDetailsRespVo.stockId}}</td>
+                <td>{{stockDetailsRespVo.marketStartValue}}</td>
+                <td>{{stockDetailsRespVo.aftIndxValue}}</td>
+                <td>{{stockDetailsRespVo.indxgapResult}}</td>
+              <td>{{stockDetailsRespVo.marketDayEndValue}}</td>
+              <td>{{stockDetailsRespVo.marketgapResult}}</td>
+              <td>{{stockDetailsRespVo.indxSignStatus}}</td>
+              <td>{{stockDetailsRespVo.marketSingStatus}}</td>
+        </tbody>
+    </table>
+</div>
+
+<div>
+<h1>Enter Market Details</h1>
+
+<div class="marketEndvalue_Div">
+    
+<label>Market End Value : </label>  <input type="text" [(ngModel)]="marketEndValue" (change)="deriveMarketGap()">
+</div>
+
+<div class="marketEndSign_Div">
+  <label>Market End Sign : </label>  <input type="text" [(ngModel)]="marketSignStatus" (change)="deriveMarketSign()">
+  </div>
+  
+  <div class="marketNotes_Div">
+    <textarea name="marketNotes" rows="4" cols="90" [(ngModel)] = "marketNotes" (change)="deriveMarketNotes()"></textarea>
+
+  </div>
+
+  <div class="submitDerived_button">
+    <button (click)="submitDeriveDetails()" class="center-button">Submit</button>
+  </div>
+
+</div>
+</div>
+
+<div *ngIf="displayingChart">
+  <p>{{displayingChartType}}</p>
+  <img src={{displayingChartUrl}}> 
+  <!-- <img src="myfile\27012025\27012025_line_chart.png"> -->
+</div>

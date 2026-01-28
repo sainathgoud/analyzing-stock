@@ -1,0 +1,154 @@
+.head_div{
+    width: 100;
+    height: 53px;
+    font-size: small;
+    text-align: center;
+    font-family: emoji;
+    h1{
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+.container {
+    display: flex;                /* Use flexbox layout */
+    justify-content: space-between; /* Optional: Space between the divs */
+    gap: 20px;       
+    height: 132px;              /* Optional: Adds space between the divs */
+  }
+  
+  .div {
+    flex: 1;                       /* Each div takes equal space */
+    padding: 10px;                 /* Add padding inside each div */
+    box-sizing: border-box;        /* Includes padding and border in width calculation */
+    border: 1px solid #ccc;       /* Border for each div */
+    background-color: #f4f4f4;     /* Background color for each div */
+    text-align: center;            /* Center content inside each div */
+  }
+  .div-content {
+    max-width: 100%;               /* Ensure content fits within the div */
+    overflow: hidden;              /* Hide overflow content */
+    word-wrap: break-word;    
+    height: 130px;     /* Break long words if they overflow */
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;  /* Stack the divs vertically on smaller screens */
+      gap: 10px;               /* Adjust the gap between the divs */
+    }
+  }
+
+  .displayDate-dev{
+    padding-inline: 0px;
+    padding: 0px;
+    margin: 0px;
+    
+    font-size: 19px;
+  .displayDate{
+    width: 256px;
+    float: left;
+    margin-right: 20%;
+
+  }
+    .errorMesg{
+        width: 256px;
+        color: red;
+        float: left
+    }
+}
+
+.table_div{
+    width: 300px;
+    float: left;
+    padding-left: 57px;
+}
+.table_details{
+    font-size: 16px;
+    border-color: black;
+    border: double;
+    th, td {
+        padding: 3px 5px; /* Adds padding inside table cells */
+        border: 1px solid #ddd; /* Light grey border for cells */
+      }
+}
+
+.dropdown_dev{
+  
+    font-weight: lighter;
+    font-size: smaller;
+    p{
+        margin: 0px;
+        padding: 0px;
+        padding-inline: 0px;
+        padding-inline: 0px;
+       
+       text-align: center;
+       padding-top: 31px;
+    }
+}
+
+.selectDropdown{
+    width: 150px;
+}
+
+.upload_dev{
+    
+    padding-top: 40px;
+
+    .upload_file{
+
+        h1{
+            text-align: center;
+            font-size: smaller;
+            font-weight: normal;
+        }
+        align-items: center;
+        justify-items :center;
+        padding-bottom: 30px;
+    }
+    .upload_notes{
+        align-items: center;
+        justify-items :center;
+        padding-left: 22%;
+    }
+
+    .upload_button{
+        align-items: center;  
+        justify-items: center;
+        padding-left: 44%;
+        button{
+            height: 30px;
+           width: 86px;
+           font-weight: bold;
+        }
+    }
+}
+.marketEndvalue_Div{
+
+  padding: 3px;
+}
+.marketEndSign_Div{
+  padding: 3px;
+}
+
+.marketNotes_Div{
+  padding: 3px;
+}
+.submitDerived_button {
+  padding: 3px;
+ 
+  
+}
+.center-button{
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3a77ab;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 22%;
+  &:hover {
+    background-color: #45a049;
+  }
+}
