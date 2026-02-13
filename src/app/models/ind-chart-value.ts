@@ -7,6 +7,8 @@ export class IndChartValue {
     indchartpoint : string;
     indxCount : number;
     indxSecondsTime : number;
-    
+    indxHighValue : number;
+    indxLowValue : number;
+    indxLastValue : string;
 
 }

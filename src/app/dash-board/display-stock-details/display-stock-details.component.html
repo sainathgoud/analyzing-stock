@@ -217,6 +217,8 @@
                     <td>Index indxCount</td>
                     <td>Index Time</td>
                     <td>Index Sing</td>
+                    <td>High Index Value</td>
+                    <td>Low Index Value</td>
                 </tr>
             </thead>
             <tbody *ngFor="let indexVal of nibNiIndexArry; let j = index">
@@ -239,6 +241,12 @@
                     </td>
                     <td>
                         {{indexVal.indxSignStatus}}
+                    </td>
+                     <td>
+                        {{indexVal.indxHighValue}}
+                    </td>
+                     <td>
+                        {{indexVal.indxLowValue}}
                     </td>
                 </tr>
       </tbody>

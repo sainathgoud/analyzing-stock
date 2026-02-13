@@ -147,7 +147,7 @@ vedioStramFormat(){
  commaSeperated.filter(values=> values !== null && values !== undefined && values.trim() !== "")
   .map(val=> {
     let cleaned = val.replace(/\s*\([^)]*\)/g, "");
-     let clearCommans= cleaned.replace(/[_@;'=]/g, "");
+     let clearCommans= cleaned.replace(/[_@;'=+]/g, "");
 
     if(clearCommans.trim() !== '-' && clearCommans.trim() !== '+'){
       if(clearCommans.length !==0){

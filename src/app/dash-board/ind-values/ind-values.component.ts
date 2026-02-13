@@ -87,7 +87,7 @@ export class IndValuesComponent  implements OnInit{
  )
  let newValString =newVal.join(",");
 console.log("finally we got this==========="+newValString);
-    this.indxCount = "6";
+   // this.indxCount = "6";
        
 
     return newValString;
@@ -101,6 +101,7 @@ console.log("finally we got this==========="+newValString);
     if(indNum == '1'){
       aftconvert =this.removeSpecialSymbols(indNum, this.indValueone);
       this.indValueone = "";
+      
       this.indValueone = aftconvert;
      this.chartDataSet.indexone.indchartpoint = this.indValueone;
      // this.indexChartService.addIndValueTochart(indNum,this.indValueone);

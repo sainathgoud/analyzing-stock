@@ -11,4 +11,6 @@ export class NiBniIndxDetailsRespVo {
 	  indxCount :  number;
 	  indxSecondsTime :  number;
 	  errorMessage : string;
+	  indxHighValue : number;
+	  indxLowValue : number;
 }

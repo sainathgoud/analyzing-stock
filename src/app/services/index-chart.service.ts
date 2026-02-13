@@ -43,6 +43,13 @@ export class IndexChartService {
     indchartVal.indchartpoint = indval;
      this.dataval = indval.split(",").filter(val=>val != null && val.length >0);
      indchartVal.indxCount = this.dataval.length;
+      
+      const numbers = this.dataval.map(Number);
+      const max = Math.max(...numbers);
+      const min = Math.min(...numbers);
+     indchartVal.indxHighValue = max;
+     indchartVal.indxLowValue = min;
+     indchartVal.indxLastValue = this.dataval[this.dataval.length-1];
 
      indchartVal.indStartValue = this.dataval[0];
       if(indchartVal.indStartValue.startsWith("-")){
